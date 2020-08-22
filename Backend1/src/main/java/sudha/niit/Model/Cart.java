@@ -9,6 +9,7 @@ import javax.persistence.Table;
 @Table
 @Entity
 public class Cart {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int cartId;
