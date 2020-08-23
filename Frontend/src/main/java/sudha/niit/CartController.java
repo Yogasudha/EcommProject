@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import sudha.niit.DAO.CartDAO;
+import sudha.niit.DAO.ProductDAO;
+import sudha.niit.Model.Cart;
+import sudha.niit.Model.Product;
+
 @Controller
 public class CartController 
 {

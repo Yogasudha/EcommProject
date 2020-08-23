@@ -14,7 +14,7 @@ import sudha.niit.Model.Cart;
 
 @Repository("cartDAO")
 @Transactional
-public class CartDAOImpl implements CartDAO 
+public class CartImpl implements CartDAO 
 {
 	@Autowired
 	SessionFactory sessionFactory;

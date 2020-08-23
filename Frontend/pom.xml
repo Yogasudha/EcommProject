@@ -17,9 +17,9 @@
     
     <dependency>
       <groupId>sudha.niit</groupId>
-      <artifactId>Backend</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-      <type>jar</type>
+  <artifactId>Backend1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <type>jar</type>
     </dependency>
     
     <!-- https://mvnrepository.com/artifact/jstl/jstl -->

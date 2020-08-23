@@ -1,9 +1,28 @@
 package sudha.niit.Config;
 
+
+import java.util.Properties;
+
+import javax.sql.DataSource;
+
+import org.hibernate.SessionFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import sudha.niit.Model.Cart;
+import sudha.niit.Model.Category;
+import sudha.niit.Model.Product;
+import sudha.niit.Model.UserDetail;
+
 @Configuration
 @ComponentScan("sudha.niit")
 @EnableTransactionManagement
-public class DatabaseConfig 
+public class DBConfig 
 {
 	@Bean(name="dataSource")
 	public DataSource getH2DataSource()
@@ -32,10 +51,8 @@ public class DatabaseConfig
 		factory.addProperties(hibernateproperties);
 		factory.addAnnotatedClass(Category.class);
 		factory.addAnnotatedClass(Product.class);
-		factory.addAnnotatedClass(Supplier.class);
-		factory.addAnnotatedClass(User.class);
+		factory.addAnnotatedClass(UserDetail.class);
 		factory.addAnnotatedClass(Cart.class);
-		factory.addAnnotatedClass(OrderDetail.class);
 		
 		SessionFactory sessionFactory=factory.buildSessionFactory();	
 		System.out.println("Session is created");

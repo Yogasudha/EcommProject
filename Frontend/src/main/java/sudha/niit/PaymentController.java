@@ -1,6 +1,21 @@
 package sudha.niit;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import sudha.niit.DAO.CartDAO;
+import sudha.niit.DAO.OrderDetailDAO;
+import sudha.niit.DAO.UserDetailDAO;
+import sudha.niit.Model.Cart;
+import sudha.niit.Model.OrderDetail;
 
 @Controller
 public class PaymentController 
@@ -9,10 +24,10 @@ public class PaymentController
 	CartDAO cartDAO;
 	
 	@Autowired
-	UserDAO userDAO;
+	UserDetailDAO userDAO;
 	
 	@Autowired
-	OrderDAO orderDAO;
+	OrderDetailDAO orderDAO;
 	
 	@RequestMapping(value="/payment")
 	public String makePayment(Model m,HttpSession session)

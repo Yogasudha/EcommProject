@@ -1,7 +1,14 @@
 package sudha.niit.Backend1;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import sudha.niit.DAO.UserDetailDAO;
+import sudha.niit.Model.UserDetail;
 
 public class UserDetailTest {
 	static UserDetailDAO userDAO;
@@ -9,9 +16,9 @@ public class UserDetailTest {
 	public static void executeFirst()
 	{
 	AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
-	context.scan("process");
+	context.scan("sudha.niit");
 	context.refresh();
-	userDAO=(UserDAO)context.getBean("userDAO");
+	userDAO=(UserDetailDAO)context.getBean("userDAO");
 	context.close();
 	}
 	
@@ -19,8 +26,8 @@ public class UserDetailTest {
 	@Test
 	public void registerUserTest()
 	{
-		User user=new User();
-		user.setUserName("lidya18");
+		UserDetail user=new UserDetail();
+		user.setUsername("lidya18");
 		user.setCustomerName("Lidya Dashwood");
 		user.setAddress("Kolathur, Chennai");
 		user.setEmailId("lidya18@gmail.com");
@@ -34,7 +41,7 @@ public class UserDetailTest {
 	@Test
 	public void updateUserTest()
 	{
-		User user= new User();
+		UserDetail user= new UserDetail();
 		user=userDAO.getUser("lidya18");
 		user.setCustomerName("Lidya Dashwood");
 		assertTrue("Update failed", userDAO.updateUser(user));
